@@ -1,0 +1,11 @@
+{
+  "name": "retriever",
+  "version": "1.0.0",
+  "description": "This is a Node application that will accumulate reddit front page (https://www.reddit.com) and reddit new (https://www.reddit.com/new) data. It uses the Reddit API.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
