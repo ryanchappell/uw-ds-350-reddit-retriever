@@ -1,3 +1,10 @@
+# Config
+apiConfig.js
+
+# Retrieval results
+r.json
+result.json
+
 # Logs
 logs
 *.log
