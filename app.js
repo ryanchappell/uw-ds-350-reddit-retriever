@@ -22,19 +22,20 @@ logger.info('starting up!');
 r.get_hot()
 .then(function(result){
   resultWriter.write('hot',result);
+  logger.info('wrote "hot" result');
 })
 .catch(function(err){
-  console.log('error occurred in "hot": ' + err);
+  logger.error('error occurred in "hot": ' + err);
 });
 
 // e.g. get 'new' listings (posts)
 r.get_new()
 .then(function(result){
   resultWriter.write('new',result);
+  logger.info('wrote "new" result');
 })
 .catch(function(err){
-  console.log('error occurred in "new": ' + err);
+  logger.error('error occurred in "new": ' + err);
 });
-
 
 logger.info('done!');
