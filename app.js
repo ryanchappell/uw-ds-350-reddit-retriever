@@ -3,6 +3,7 @@ const snoowrap = require('snoowrap');
 const fs = require('fs');
 const winston = require('winston');
 const apiConfig = require('./apiConfig.js');
+const resultWriter = require('./resultWriter.js');
 
 // log config
 var logger = new (winston.Logger)({
@@ -20,15 +21,20 @@ logger.info('starting up!');
 // e.g. get front page listings (posts)
 r.get_hot()
 .then(function(result){
-  var fileDate = new Date().toString();
-  // TODO: somethin' like this
-  //var fileName = 'front-page-hot_' + fileDate.format("%Y-%m-%d %H:%M:%S") + '.json';
-  var fileName = 'result.json'
-
-  fs.writeFile(fileName, JSON.stringify(result, null, '  '));
+  resultWriter.write('hot',result);
 })
 .catch(function(err){
-  console.log('error occurred: ' + err);
+  console.log('error occurred in "hot": ' + err);
 });
+
+// e.g. get 'new' listings (posts)
+r.get_new()
+.then(function(result){
+  resultWriter.write('new',result);
+})
+.catch(function(err){
+  console.log('error occurred in "new": ' + err);
+});
+
 
 logger.info('done!');

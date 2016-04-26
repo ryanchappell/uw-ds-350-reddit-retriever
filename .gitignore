@@ -2,8 +2,12 @@
 apiConfig.js
 
 # Retrieval results
-r.json
-result.json
+hot_*
+new_*
+
+
+# Scratch
+scratch.js
 
 # Logs
 logs
