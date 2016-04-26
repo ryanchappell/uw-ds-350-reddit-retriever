@@ -2,9 +2,7 @@
 apiConfig.js
 
 # Retrieval results
-hot_*
-new_*
-
+results/*
 
 # Scratch
 scratch.js
