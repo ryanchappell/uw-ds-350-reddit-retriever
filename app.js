@@ -14,28 +14,31 @@ var logger = new (winston.Logger)({
 });
 
 const r = new snoowrap(apiConfig.apiConfig);
+const retrievalIntervalMillis = 60 * 1000;
 //r.config({debug: true});
 
 logger.info('starting up!');
 
-// e.g. get front page listings (posts)
-r.get_hot()
-.then(function(result){
-  resultWriter.write('hot',result);
-  logger.info('wrote "hot" result');
-})
-.catch(function(err){
-  logger.error('error occurred in "hot": ' + err);
-});
+setInterval(function(){
+  r.get_hot()
+  .then(function(result){
+    resultWriter.write('hot',result);
+    logger.info('wrote "hot" result');
+  })
+  .catch(function(err){
+    logger.error('error occurred in "hot": ' + err);
+  });
+}, retrievalIntervalMillis);
 
-// e.g. get 'new' listings (posts)
-r.get_new()
-.then(function(result){
-  resultWriter.write('new',result);
-  logger.info('wrote "new" result');
-})
-.catch(function(err){
-  logger.error('error occurred in "new": ' + err);
-});
+setInterval(function(){
+  r.get_new()
+  .then(function(result){
+    resultWriter.write('new',result);
+    logger.info('wrote "new" result');
+  })
+  .catch(function(err){
+    logger.error('error occurred in "new": ' + err);
+  });
+}, retrievalIntervalMillis);
 
 logger.info('done!');
