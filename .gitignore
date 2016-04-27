@@ -1,5 +1,6 @@
 # Config
 apiConfig.js
+auth.js
 
 # Retrieval results
 results/*

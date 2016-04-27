@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "reddit-oauth": "^1.0.8",
     "snoowrap": "^0.11.5",
     "winston": "^2.2.0"
   }
