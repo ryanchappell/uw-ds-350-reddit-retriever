@@ -23,7 +23,7 @@ var logger = new (winston.Logger)({
 });
 
 var dataItem = process.argv[2];
-var retrievalIntervalMillis = 5 * 1000;
+var retrievalIntervalMillis = 5 * 60 * 1000;
 
 logger.info("starting up!");
 logger.info("retrievalIntervalMillis: " + retrievalIntervalMillis);
