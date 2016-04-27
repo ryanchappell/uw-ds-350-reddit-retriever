@@ -24,6 +24,7 @@ var logger = new (winston.Logger)({
 
 var dataItem = process.argv[2];
 var retrievalIntervalMillis = 60000;
+var itemLimit = 100;
 
 logger.info("starting up!");
 logger.info("retrievalIntervalMillis: " + retrievalIntervalMillis);
@@ -47,7 +48,7 @@ logger.info("retrievalIntervalMillis: " + retrievalIntervalMillis);
     switch(dataItem)
     {
         case "1":
-          r.get_hot()
+          r.get_hot({limit: itemLimit})
           .then(function(result){
             resultWriter.write('hot',result);
             logger.info('wrote "hot" result');
@@ -57,7 +58,7 @@ logger.info("retrievalIntervalMillis: " + retrievalIntervalMillis);
           });
           break;
         case "2":
-          r.get_new()
+          r.get_new({limit: itemLimit})
           .then(function(result){
             resultWriter.write('new',result);
             logger.info('wrote "new" result');
