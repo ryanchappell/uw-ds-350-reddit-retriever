@@ -28,7 +28,7 @@ var retrievalIntervalMillis = 60000;
 logger.info("starting up!");
 logger.info("retrievalIntervalMillis: " + retrievalIntervalMillis);
 
-setInterval(function(){
+//setInterval(function(){
 
   auth.getAccessToken(function(token){
     if (!token)
@@ -70,5 +70,5 @@ setInterval(function(){
           throw new Error("not implemented for dataItem " + dataItem);
     }
 
-  })
-}, retrievalIntervalMillis);
+  });
+//}, retrievalIntervalMillis);
