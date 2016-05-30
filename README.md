@@ -14,5 +14,6 @@ When executed, it will write the Reddit API to a .json file that includes the pa
 ### Run
 ```
 > node app.js [DATAITEMID]
+# [DATAITEMID] can be 1 for "hot" (aka "front" page),  2 for "new"
 ```
-[DATAITEMID] can be 1 for "hot",  2 for "new"
+
