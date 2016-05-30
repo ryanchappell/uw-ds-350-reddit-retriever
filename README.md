@@ -1,7 +1,7 @@
 # retriever 
 ![alt text](https://travis-ci.org/ryanchappell/uw-ds-350-reddit-retriever.svg?branch=master "build status")
 
-This is a Node application that retrieve 100 results from the front page (aka "hot", https://www.reddit.com) or new page (https://www.reddit.com/new). It uses the Reddit API.
+This is a Node application that uses the Reddit API to retrieve 100 results for the front page (aka "hot", https://www.reddit.com) or new page (https://www.reddit.com/new), depending on the parameters passed. 
 
 When executed, it will write the Reddit API to a .json file that includes the page and timestamp in the filename (e.g. "new-1461809887043.json").
 
