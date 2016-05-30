@@ -6,7 +6,8 @@ This is a Node application that retrieve 100 results from the front page (aka "h
 ## To use
 
 ### Configure
-Create an auth.js file which will provide the authentication credentials used by app.js. See auth-example.js for an example.
+1. Create an auth.js file which will provide the authentication credentials used by app.js. See auth-example.js for an example.
+2. Create an apiConfig.js file which will provide the user agent supplied to the Reddit API. See apiConfig-example.js for an example.
 
 ### Run
 ```
